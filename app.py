@@ -26,7 +26,7 @@ def main():
         if st.button("Start the Magic"):
             st.write("Julia(Your AI Researcher is at it)...")
             st.image("JULIA.png")
-            st.write("App In Development") 
+            st.write("App in Development") 
             pass
             #AI Agent -1 Researcher
 
