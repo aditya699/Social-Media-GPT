@@ -8,7 +8,7 @@ AI System By Aditya
 '''
 import streamlit as st
 import os
-
+os.environ['OPENAI_API_KEY']="test"
 
 def main():
         st.title("Social MediaGPT")
