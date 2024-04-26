@@ -15,6 +15,8 @@ Julia ->Jinny->Jane ->John
 AI System By Aditya
 '''
 import os
+import json
+import requests
 import streamlit as st
 from langchain.adapters.openai import convert_openai_messages
 from langchain_community.chat_models import ChatOpenAI
@@ -24,8 +26,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from openai import AzureOpenAI
-import requests
-import json
+
 
 
 # run tavily search
