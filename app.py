@@ -10,6 +10,8 @@ Employee 1 Planning -
 3.Jane your AI Editor
 4.John is your Artist
 
+Julia ->Jinny->Jane ->John
+
 AI System By Aditya
 '''
 import os
@@ -76,49 +78,61 @@ def main():
                 st.write("Here the report which Julia has made")
                 st.write(report)
     
-                st.write("App in Development") 
+            except Exception as e:
+                  st.write("Julia is not working as expected",e)
 
                 
 
                  #Agent -2 Simi Writer
-                st.header("Jinny your Writer is  Writing the text...")
-                st.image("Simi.PNG")
-                prompt = ChatPromptTemplate.from_template(
+            st.header("Jinny your Writer is  Writing the text...")
+            st.image("Simi.PNG")
+            prompt = ChatPromptTemplate.from_template(
                 "Write a deatalied Social Media Post about {topic} in a {tone}and add relevant hashtags take points from text provided in input and add your knowledge as well"   
                 )
-                output_parser = StrOutputParser()
-                model = ChatOpenAI(model="gpt-3.5-turbo")
-                chain = (
+            output_parser = StrOutputParser()
+            model = ChatOpenAI(model="gpt-3.5-turbo")
+            chain = (
                     {"topic": RunnablePassthrough() , "tone": RunnablePassthrough()} 
                     | prompt
                     | model
                     | output_parser
                 )
+            try:
                 result=chain.invoke([report,tone_of_post])
                 st.write(result)
-                #Agent 3 Jane
-                st.header("Jane your Editor is  Editing the text...")
-                st.image("JANE.PNG")
-                prompt = ChatPromptTemplate.from_template(
+                
+            except Exception as e:
+                st.write("Jinny is Not Working as expected")
+            #Agent 3 Jane
+            st.header("Jane your Editor is  Editing the text...")
+            st.image("JANE.PNG")
+            prompt = ChatPromptTemplate.from_template(
                 "Act as editor make sure no grammer errors are in the {topic}.Output the same text with grammer modifications"   
                 )
-                chain = (
+            chain = (
                     {"topic": RunnablePassthrough()} 
                     | prompt
                     | model
                     | output_parser
                 )
+            try:
                 result=chain.invoke(result)
                 st.write(result)
+            except Exception as e:
+                st.write("Jane is Not Working as expected")
 
-                #Agent 4 Artist
-                st.header("John your own artist is creating a image for you...")
-                st.image("John.PNG")
-                client = AzureOpenAI(
+            
+
+            #Agent 4 Artist
+            st.header("John your own artist is creating a image for you...")
+            st.image("John.PNG")
+            client = AzureOpenAI(
                 api_version="2024-02-01",
                 azure_endpoint="https://aiagents.openai.azure.com/",
                 api_key="198e8394cb0f47e69807d2bcd7a26c60",
                 )
+            
+            try:
 
                 result = client.images.generate(
                     model="sass", # the name of your DALL-E 3 deployment
@@ -142,9 +156,7 @@ def main():
                 st.image("image.jpg")
 
             except Exception as e:
-                  st.write("Julia is not working as expected",e)
-            
-
+                 st.write("John is not working as expected.")
 
 if __name__ == "__main__":
       main()
