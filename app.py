@@ -35,7 +35,7 @@ os.environ['OPENAI_API_KEY']="sk-G9diJG0FM0oJbuGdatmbT3BlbkFJozhBFmnKWEZYsEv7tPS
 
 
 def main():
-        st.title("Social MediaGPT")
+        st.title("Social MediaGPT A AI COMPANY WITH 0 EMPLOYEES")
         st.sidebar.image("robots_working_on_social_media.png","Made By Aditya Bhatt")
         st.sidebar.markdown("[LinkedIn](https://www.linkedin.com/in/adityaabhatt/)")
         st.sidebar.markdown("[About Me](https://aiwithaditya.odoo.com/)")
