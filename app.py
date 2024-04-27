@@ -49,7 +49,7 @@ def main():
 
         if st.button("Start the Magic"):
             st.header("Julia(Your AI Researcher is at it)...")
-            st.image("JULIA.png")
+            st.image("Julia.png")
             try:
                 #AI Agent -1 Researcher
                 st.write("Julia is searching over the internet...")
@@ -106,7 +106,7 @@ def main():
                 st.write("Jinny is Not Working as expected")
             #Agent 3 Jane
             st.header("Jane your Editor is  Editing the text...")
-            st.image("JANE.PNG")
+            st.image("Jane.PNG")
             prompt = ChatPromptTemplate.from_template(
                 "Act as editor make sure no grammer errors are in the {topic}.Output the same text with grammer modifications"   
                 )
