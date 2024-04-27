@@ -44,7 +44,7 @@ def main():
         title = st.text_input('Enter topic on which you want to create a post:')
         mood_options = ["Funny", "Casual", "Formal"]
         tone_of_post=st.selectbox("Select mood of post", mood_options)
-        print(f"The User wants a post on the title : {title} and the mood of the post is {tone_of_post}")
+        
         
 
         if st.button("Start the Magic"):
@@ -150,7 +150,7 @@ def main():
                     # Open a file in binary write mode and write the content of the response
                     with open("image.jpg", "wb") as file:
                        z= file.write(response.content)
-                    print("Image downloaded successfully.")
+                    #print("Image downloaded successfully.")
                 else:
                     print("Failed to download image.")
                 
