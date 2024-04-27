@@ -49,7 +49,7 @@ def main():
 
         if st.button("Start the Magic"):
             st.header("Julia(Your AI Researcher is at it)...")
-            st.image("Julia.png")
+           #st.image("Julia.png")
             try:
                 #AI Agent -1 Researcher
                 st.write("Julia is searching over the internet...")
@@ -86,7 +86,7 @@ def main():
 
                  #Agent -2 Simi Writer
             st.header("Jinny your Writer is  Writing the text...")
-            st.image("Simi.PNG")
+            #st.image("Simi.PNG")
             prompt = ChatPromptTemplate.from_template(
                 "Write a deatalied Social Media Post about {topic} in a {tone}and add relevant hashtags take points from text provided in input and add your knowledge as well"   
                 )
@@ -106,7 +106,7 @@ def main():
                 st.write("Jinny is Not Working as expected")
             #Agent 3 Jane
             st.header("Jane your Editor is  Editing the text...")
-            st.image("Jane.PNG")
+            #st.image("Jane.PNG")
             prompt = ChatPromptTemplate.from_template(
                 "Act as editor make sure no grammer errors are in the {topic}.Output the same text with grammer modifications"   
                 )
@@ -126,7 +126,7 @@ def main():
 
             #Agent 4 Artist
             st.header("John your own artist is creating a image for you...")
-            st.image("John.PNG")
+            #st.image("John.PNG")
             client = AzureOpenAI(
                 api_version="2024-02-01",
                 azure_endpoint="https://aiagents.openai.azure.com/",
@@ -154,7 +154,7 @@ def main():
                 else:
                     print("Failed to download image.")
                 
-                st.image("image.jpg")
+                st.write(f"Find ur image at {image_url}")
 
             except Exception as e:
                  st.write("John is not working as expected.")
